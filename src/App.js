@@ -1,8 +1,8 @@
-import './App.scss';
-import purchases from './data/scheme-sketch.json'
+import './App.scss'
+import rows from './data/scheme-sketch.json'
 import DataTable from './components/DataTable'
 
-// •  All customers with a particular name
+// • All customers with a particular name
 // • All customers with a particular street
 // • All customers with that have bought a particular car make
 // • All customers with that have bought a particular car model
@@ -15,9 +15,9 @@ function App() {
       <h1 >
         🏎️ 🚙 🚗
       </h1>
-      <DataTable purchases={purchases} />
+      <DataTable rows={rows} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

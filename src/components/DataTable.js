@@ -1,26 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import Search from './Search'
+import { formatDate } from '../utilities/dateTime'
 
 import '../styles/DataTable.scss'
 
-const DataTable = ({ purchases }) => {
+const DataTable = ({ rows }) => {
+  const [search, setSearch] = useState('')
+
+  const handleSearch = (event) => {
+    const text = event.target.value
+    setSearch(text)
+  }
+
   return (
     <div className='data-table'>
-    {purchases.map(purchase => (
-        <div className='data-table__row'>
+      <Search
+        search={search}
+        onSearch={handleSearch}
+      />
+      <div className='data-table__row-header'>
+        <div>Name</div>
+        <div>Surname</div>
+        <div>Address</div>
+        <div>Age</div>
+        <div>Register date</div>
+      </div>
+      {rows.map(row => (
+        <div className='data-table__row' key={row.customer.created}>
           <div>
-            {purchase.customer.name}
+            {row.customer.name}
           </div>
           <div>
-            {purchase.customer.surname}
+            {row.customer.surname}
           </div>
           <div>
-            {purchase.customer.address}
+            {row.customer.address}
           </div>
           <div>
-            {purchase.customer.age}
+            {row.customer.age}
           </div>
           <div>
-            {purchase.customer.created}
+            {formatDate(row.customer.created)}
           </div>
         </div>
       ))}
