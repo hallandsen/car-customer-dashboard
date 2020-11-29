@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import purchases from './data/scheme-sketch.json'
+import DataTable from './components/DataTable'
+
+// •  All customers with a particular name
+// • All customers with a particular street
+// • All customers with that have bought a particular car make
+// • All customers with that have bought a particular car model
+// • All customers that have made a purchase from a particular sales person (by sales person name)
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1 >
+        🏎️ 🚙 🚗
+      </h1>
+      <DataTable purchases={purchases} />
     </div>
   );
 }
