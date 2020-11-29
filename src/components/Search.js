@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Search = ({ onSearch, search }) => (
+import '../styles/Search.scss'
+
+const Search = ({ onSearch, search, filterName }) => (
   <input
-    type="search"
-    className="data-table__search"
-    placeholder="Søg brugere"
+    type='search'
+    className='Search'
+    placeholder={`Search by ${filterName.toLowerCase()}`}
     value={search}
     onChange={onSearch}
   />

@@ -39,6 +39,15 @@
         "color": "Black",
         "extras": [],
         "recommendedPrice": 600000
+      },
+      {
+        "price": 490000,
+        "orderDate": "2020-08-17T14:41:28.842Z",
+        "make": "BMW",
+        "model": "IX",
+        "color": "Blue",
+        "extras": [],
+        "recommendedPrice": 500000
       }
     ],
     "salesPerson": {
@@ -82,6 +91,60 @@
       "age": "25",
       "address": "Østerbrogade 112, 2100, København Ø",
       "created": "2019-02-06T14:41:28.842Z"
+    }
+  },
+
+  {
+    "purchases": [
+      {
+      "price": 220000,
+      "orderDate": "2019-08-21T14:41:28.842Z",
+      "make": "Honda",
+      "model": "Civic 5 door",
+        "color": "Deep red",
+        "extras": [],
+        "recommendedPrice": 239000
+      }
+    ],
+    "salesPerson": {
+      "name": "Johan Hansen",
+      "jobTitle": "Sales Traine",
+      "address": "Tagensvej 102, 2200, Frederiksberg",
+      "created": "2011-1-20T14:41:28.842Z"
+    },
+    "customer": {
+      "name": "Jacob",
+      "surname": "Svendsen",
+      "age": "39",
+      "address": "Dagvej 20, 2820, Gentofte",
+      "created": "2018-03-16T14:41:28.842Z"
+    }
+  },
+
+  {
+    "purchases": [
+      {
+      "price": 329000,
+      "orderDate": "2019-08-21T14:41:28.842Z",
+      "make": "Skoda",
+      "model": "Octavia Combi IV",
+        "color": "Light grey",
+        "extras": [],
+        "recommendedPrice": 329000
+      }
+    ],
+    "salesPerson": {
+      "name": "Johannes Mortensen",
+      "jobTitle": "Seller",
+      "address": "Jagtvej 230, 2100, København Ø",
+      "created": "2019-11-20T14:41:28.842Z"
+    },
+    "customer": {
+      "name": "Anders",
+      "surname": "Christoffersen",
+      "age": "42",
+      "address": "Søborghovedgade 30, 2860, Søborg",
+      "created": "2020-11-26T14:41:28.842Z"
     }
   }
 

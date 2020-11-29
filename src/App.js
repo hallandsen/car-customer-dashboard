@@ -1,21 +1,43 @@
-import './App.scss'
-import rows from './data/scheme-sketch.json'
+import React, { useState } from 'react'
+
 import DataTable from './components/DataTable'
+import Search from './components/Search'
+import Filters from './components/Filters'
+import { filterOptions } from './utilities/filterOptions'
+import rows from './data/scheme-sketch.json'
 
-// • All customers with a particular name
-// • All customers with a particular street
-// • All customers with that have bought a particular car make
-// • All customers with that have bought a particular car model
-// • All customers that have made a purchase from a particular sales person (by sales person name)
-
+import './App.scss'
 
 function App() {
+  const [search, setSearch] = useState('')
+  const [filter, setFilter] = useState(filterOptions.customerName)
+
+  const handleSearch = (event) => {
+    const text = event.target.value
+    setSearch(text)
+  }
+
+  const handleFilterChange = (filter) => () => {
+    setFilter(filter)
+  }
+
+  const filterMethod = (row) => filter.method(search, row)
+  const filteredRows = rows.filter(filterMethod)
+
   return (
     <div className='App'>
-      <h1 >
-        🏎️ 🚙 🚗
-      </h1>
-      <DataTable rows={rows} />
+      <h1>🏎️ 🚙 🚗</h1>
+      <Search
+        search={search}
+        onSearch={handleSearch}
+        filterName={filter.name}
+      />
+      <Filters
+        filters={filterOptions}
+        handleChange={handleFilterChange}
+        activeFilter={filter}
+      />
+      <DataTable rows={filteredRows} />
     </div>
   )
 }

@@ -1,0 +1,24 @@
+.filters {
+  padding: 0 10px;
+  margin-bottom: 20px;
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & label {
+      margin-right: 5px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    & input {
+      cursor: pointer;
+    }
+  }
+}

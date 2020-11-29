@@ -1,28 +1,18 @@
-.data-table {
-
-  &__search {
-    width: 100%;
-    height: 35px;
-    padding: 0 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    border: 1px solid #d1d1d1;
-    margin-bottom: 20px;
-  }
-
+.DataTable {
   &__row,
   &__row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     gap: 10px 10px;
     padding: 10px 10px;
+  }
 
-    &:nth-child(2n) {
-      background-color: #f0f0f0;
-    }
+  &__row:nth-child(2n) {
+    background-color: #f0f0f0;
   }
 
   &__row-header {
     font-weight: 700;
+    border-bottom: 1px solid #d1d1d1;
   }
 }
