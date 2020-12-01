@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import customers from '../../data/scheme-sketch.json'
+import customers from '../../data/customers.json'
 import { filterOptions } from '../../utilities/filterOptions'
 
 export const customersSlice = createSlice({
