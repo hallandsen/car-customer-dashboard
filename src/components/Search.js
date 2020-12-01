@@ -1,20 +1,9 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
-import { selectSearch, selectActiveFilter, setSearch } from '../store/reducers/customersSlice'
 import '../styles/Search.scss'
 
-const Search = () => {
-  const search = useSelector(selectSearch)
-  const activeFilter = useSelector(selectActiveFilter)
-  const dispatch = useDispatch()
-
+const Search = ({ search, activeFilter, handleChange }) => {
   const placeholder = `Search${activeFilter ? ' by ' : ''}${activeFilter?.toLowerCase() || ''}`
-
-  const handleSearchChange = (event) => {
-    const text = event.target.value
-    dispatch(setSearch(text))
-  }
 
   return (
     <input
@@ -22,7 +11,7 @@ const Search = () => {
       className='Search'
       placeholder={placeholder}
       value={search}
-      onChange={handleSearchChange}
+      onChange={handleChange}
     />
   )
 }

@@ -1,30 +1,40 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { selectRows } from '../store/reducers/customersSlice'
-import Row from './Row'
-import '../styles/DataTable.scss'
+import { selectSearch, selectRows, selectActiveFilter, selectFilters, setActiveFilter, setSearch } from '../store/reducers/customersSlice'
+import Table from './Table'
+import Search from './Search'
+import Filters from './Filters'
 
 const CustomerTable = () => {
   const rows = useSelector(selectRows)
+  const activeFilter = useSelector(selectActiveFilter)
+  const filters = useSelector(selectFilters)
+  const search = useSelector(selectSearch)
+  const dispatch = useDispatch()
+
+  const handleSelectFilter = (filter) => () => {
+    dispatch(setActiveFilter(filter))
+  }
+
+  const handleSearchChange = (event) => {
+    const text = event.target.value
+    dispatch(setSearch(text))
+  }
 
   return (
-    <div className='DataTable'>
-
-      <div className='DataTable__row-header'>
-        <div>Name</div>
-        <div>Surname</div>
-        <div>Address</div>
-        <div>Age</div>
-        <div>Register date</div>
-      </div>
-
-      <div className='DataTable__rows'>
-        {rows.map(row => (
-          <Row row={row} key={row.customerDetails.created} />
-        ))}
-      </div>
-
+    <div>
+      <Search
+        search={search}
+        handleChange={handleSearchChange}
+        activeFilter={activeFilter}
+      />
+      <Filters
+        filters={filters}
+        activeFilter={activeFilter}
+        onSelect={handleSelectFilter}
+      />
+      <Table rows={rows} />
     </div>
   )
 }
