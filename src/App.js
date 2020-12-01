@@ -12,7 +12,7 @@ function App() {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState(filterOptions.customerName)
 
-  const handleSearch = (event) => {
+  const handleSearchChange = (event) => {
     const text = event.target.value
     setSearch(text)
   }
@@ -29,7 +29,7 @@ function App() {
       <h1>🏎️ 🚙 🚗</h1>
       <Search
         search={search}
-        onSearch={handleSearch}
+        onSearch={handleSearchChange}
         filterName={filter.name}
       />
       <Filters
