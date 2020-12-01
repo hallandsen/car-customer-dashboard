@@ -7,7 +7,7 @@ export const customersSlice = createSlice({
   initialState: {
     search: '',
     filters: Object.keys(filterOptions).map(key => filterOptions[key]),
-    activeFilter: null,
+    activeFilter: filterOptions.customerName,
     customers: customers
   },
   reducers: {
