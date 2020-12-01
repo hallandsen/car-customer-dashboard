@@ -9,13 +9,14 @@ import PurchaseRow from './PurchaseRow'
 import { selectCustomer } from '../store/reducers/customersSlice'
 import { customerLabels, salesPersonLabels, purchaseLabels } from '../utilities/tableLabels'
 
+import '../styles/CustomerPage.scss'
 
 const CustomerPage = () => {
   const { id } = useParams()
   const { customerDetails, salesPerson, purchases } = useSelector(selectCustomer(id))
 
   return (
-    <div>
+    <div className='CustomerPage'>
       <h4>Customer</h4>
       <Table
         rows={[customerDetails]}

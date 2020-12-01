@@ -1,0 +1,10 @@
+.CustomerPage {
+  & h4 {
+    padding: 0 10px;
+    margin: 20px 0 10px;
+  }
+
+  & .DataTable__row-header {
+    font-weight: inherit;
+  }
+}
