@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { formatDate } from '../utilities/dateTime'
+import { formatPrice } from '../utilities/formatPrice'
 import Row from './Row'
 
 const SalesPersonRow = ({ row }) => (
@@ -8,7 +8,7 @@ const SalesPersonRow = ({ row }) => (
     <div>{row.name}</div>
     <div>{row.jobTitle}</div>
     <div>{row.address}</div>
-    <div>{formatDate(row.created)}</div>
+    <div>{formatPrice(row.salary)}</div>
   </Row>
 )
 

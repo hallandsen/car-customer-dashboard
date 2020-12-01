@@ -2,23 +2,23 @@ export const salesPersonLabels = {
   "name": "Name",
   "jobTitle": "Job title",
   "address": "Address",
-  "created": "Created date"
+  "salary": "Salary"
 }
 
 export const customerLabels = {
   "name": "Name",
   "surname": "Surname",
-  "age": "Age",
   "address": "Address",
+  "age": "Age",
   "created": "Created date"
 }
 
 export const purchaseLabels = {
   "price": 'Price',
-  "created": "Order date",
+  "orderDate": "Order date",
   "make": "Maker",
   "model": "Model",
   "color": "Color",
   "extras": 'Extras',
-  "recommendedPrice": 'Recommended price'
+  "recommendedPrice": 'Rec. price'
 }

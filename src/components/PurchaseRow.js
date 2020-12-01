@@ -7,7 +7,7 @@ import Row from './Row'
 const PurchaseRow = ({ row }) => (
   <Row>
     <div>{formatPrice(row.price)}</div>
-    <div>{formatDate(row.created)}</div>
+    <div>{formatDate(row.orderDate)}</div>
     <div>{row.make}</div>
     <div>{row.model}</div>
     <div>{row.color}</div>
