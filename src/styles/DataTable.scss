@@ -2,7 +2,7 @@
   &__row,
   &__row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
     gap: 10px 10px;
     padding: 10px 10px;
     text-decoration: none;
