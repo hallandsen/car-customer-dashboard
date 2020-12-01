@@ -58,17 +58,23 @@ const selectCustomersByCarModel = state => state.customers.filter(customer =>
 )
 
 export const selectCustomers = state => {
+
   switch (state.activeFilter) {
     case filterOptions.customerName:
       return selectCustomersByName(state)
+
     case filterOptions.customerStreet:
       return selectCustomersByStreet(state)
+
     case filterOptions.salesPersonName:
       return selectCustomersBySalesPerson(state)
+
     case filterOptions.carMake:
       return selectCustomersByCarMake(state)
+
     case filterOptions.carModel:
       return selectCustomersByCarModel(state)
+
     default:
       return state.customers
   }
