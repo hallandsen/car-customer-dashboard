@@ -21,19 +21,22 @@ const CustomerPage = () => {
       <Table
         rows={[customerDetails]}
         labels={customerLabels}
-        RowComponent={CustomerRow()}
+        RowComponent={CustomerRow}
+        type='customer'
       />
       <h4>Sales person</h4>
       <Table
         rows={[salesPerson]}
         labels={salesPersonLabels}
         RowComponent={SalesPersonRow}
+        type='sales'
       />
       <h4>Purchases</h4>
       <Table
         rows={purchases}
         labels={purchaseLabels}
         RowComponent={PurchaseRow}
+        type='purchases'
       />
     </div>
   )

@@ -3,7 +3,7 @@ import React from 'react'
 import { formatDate } from '../utilities/dateTime'
 import Row from './Row'
 
-const CustomerRow = link => ({ row }) => (
+const CustomerRow = ({ row }) => (
   <Row>
     <div>{row.name}</div>
     <div>{row.surname}</div>

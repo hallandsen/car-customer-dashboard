@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/DataTable.scss'
 
-const Table = ({ rows, labels, RowComponent }) => {
+const Table = ({ rows, labels, RowComponent, type }) => {
   const renderLabels = Object.keys(labels).map(key => (
     <div key={key}>{labels[key]}</div>
   ))
@@ -18,7 +18,7 @@ const Table = ({ rows, labels, RowComponent }) => {
         {rows.map(row => (
           <RowComponent
             row={row}
-            key={row.created}
+            key={`${row.created}-${type}`}
           />
         ))}
       </div>

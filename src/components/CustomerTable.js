@@ -44,6 +44,7 @@ const CustomerTable = () => {
         rows={customerDetails}
         labels={customerLabels}
         RowComponent={CustomerRowLink}
+        type='customer'
       />
     </div>
   )
