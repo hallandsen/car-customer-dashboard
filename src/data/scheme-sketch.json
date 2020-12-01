@@ -72,10 +72,10 @@
       "orderDate": "2019-02-06T14:41:28.842Z",
       "make": "Ford",
       "model": "Escort",
-        "color": "Dark blue",
-        "extras": [
-          "18 inc rims"
-        ],
+      "color": "Dark blue",
+      "extras": [
+        "18 inc rims"
+      ],
         "recommendedPrice": 210000
       }
     ],
@@ -101,9 +101,9 @@
       "orderDate": "2019-08-21T14:41:28.842Z",
       "make": "Honda",
       "model": "Civic 5 door",
-        "color": "Deep red",
-        "extras": [],
-        "recommendedPrice": 239000
+      "color": "Deep red",
+      "extras": [],
+      "recommendedPrice": 239000
       }
     ],
     "salesPerson": {
@@ -128,9 +128,9 @@
       "orderDate": "2019-08-21T14:41:28.842Z",
       "make": "Skoda",
       "model": "Octavia Combi IV",
-        "color": "Light grey",
-        "extras": [],
-        "recommendedPrice": 329000
+      "color": "Light grey",
+      "extras": [],
+      "recommendedPrice": 329000
       }
     ],
     "salesPerson": {

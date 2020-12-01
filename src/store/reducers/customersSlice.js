@@ -15,7 +15,11 @@ export const customersSlice = createSlice({
       state.search = action.payload
     },
     setActiveFilter: (state, action) => {
-      state.activeFilter = action.payload
+      if (state.activeFilter === action.payload) {
+        state.activeFilter = null
+      } else {
+        state.activeFilter = action.payload
+      }
     },
   },
 })

@@ -43,7 +43,7 @@ const CustomerTable = () => {
       <Table
         rows={customerDetails}
         labels={customerLabels}
-        RowComponent={CustomerRow}
+        RowComponent={CustomerRow('link')}
       />
     </div>
   )

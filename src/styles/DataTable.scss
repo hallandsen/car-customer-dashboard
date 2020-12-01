@@ -2,14 +2,14 @@
   &__row,
   &__row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px 10px;
     padding: 10px 10px;
     text-decoration: none;
     color: inherit;
   }
 
-  &__row {
+  & a {
     transition: all 0.1s;
     &:hover,
     &:focus,

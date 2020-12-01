@@ -1,8 +1,8 @@
 export const salesPersonLabels = {
-  "name": "Navn",
-  "jobTitle": "Jobtitel",
-  "address": "Adresse",
-  "created": "Oprettelsesdato"
+  "name": "Name",
+  "jobTitle": "Job title",
+  "address": "Address",
+  "created": "Created date"
 }
 
 export const customerLabels = {
@@ -14,11 +14,11 @@ export const customerLabels = {
 }
 
 export const purchaseLabels = {
-  "price": 'Pris',
-  "orderDate": "Ordredato",
-  "make": "Mærke",
+  "price": 'Price',
+  "orderDate": "Order date",
+  "make": "Maker",
   "model": "Model",
-  "color": "Farve",
-  "extras": 'Extra tilbehør',
-  "recommendedPrice": 'Anbefalet pris'
+  "color": "Color",
+  "extras": 'Extras',
+  "recommendedPrice": 'Recommended price'
 }

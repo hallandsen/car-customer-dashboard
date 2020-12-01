@@ -1,12 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { formatDate } from '../utilities/dateTime'
+import Row from './Row'
 
 const PurchaseRow = ({ row }) => (
-  <Link to={`/customer/${row.created}`}
-    className='DataTable__row'
-  >
+  <Row>
     <div>{row.price}</div>
     <div>{formatDate(row.orderDate)}</div>
     <div>{row.make}</div>
@@ -14,7 +12,7 @@ const PurchaseRow = ({ row }) => (
     <div>{row.color}</div>
     <div>{row.extras.join(', ')}</div>
     <div>{row.recommendedPrice}</div>
-  </Link>
+  </Row>
 )
 
 export default PurchaseRow

@@ -1,17 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { formatDate } from '../utilities/dateTime'
+import Row from './Row'
 
 const SalesPersonRow = ({ row }) => (
-  <Link to={`/customer/${row.created}`}
-    className='DataTable__row'
-  >
+  <Row>
     <div>{row.name}</div>
     <div>{row.jobTitle}</div>
     <div>{row.address}</div>
     <div>{formatDate(row.created)}</div>
-  </Link>
+  </Row>
 )
 
 export default SalesPersonRow

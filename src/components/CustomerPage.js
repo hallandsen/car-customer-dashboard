@@ -20,7 +20,7 @@ const CustomerPage = () => {
       <Table
         rows={[customerDetails]}
         labels={customerLabels}
-        RowComponent={CustomerRow}
+        RowComponent={CustomerRow()}
       />
       <h4>Sales person</h4>
       <Table
