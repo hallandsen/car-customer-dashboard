@@ -4,11 +4,11 @@ import { formatDate } from '../utilities/dateTime'
 
 const Row = ({ row }) => (
   <div className='DataTable__row'>
-    <div>{row.customer.name}</div>
-    <div>{row.customer.surname}</div>
-    <div>{row.customer.address}</div>
-    <div>{row.customer.age}</div>
-    <div>{formatDate(row.customer.created)}</div>
+    <div>{row.customerDetails.name}</div>
+    <div>{row.customerDetails.surname}</div>
+    <div>{row.customerDetails.address}</div>
+    <div>{row.customerDetails.age}</div>
+    <div>{formatDate(row.customerDetails.created)}</div>
   </div>
 )
 

@@ -1,24 +1,32 @@
 import React from 'react'
 
 import Filter from './Filter'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { selectActiveFilter, selectFilters, setActiveFilter } from '../store/reducers/customersSlice'
 
 import '../styles/Filters.scss'
 
-const Filters = ({ filters, handleChange, activeFilter }) => {
+const Filters = () => {
+  const activeFilter = useSelector(selectActiveFilter)
+  const filters = useSelector(selectFilters)
+  const dispatch = useDispatch()
+
+  const handleChange = (filter) => () => {
+    dispatch(setActiveFilter(filter))
+  }
+
   return (
     <div className='filters'>
       <div className='filters__row'>
-        {Object.keys(filters).map(key => {
-          const filter = filters[key]
-          return (
-            <Filter
-              filter={filter}
-              key={filter.name}
-              handleChange={handleChange(filter)}
-              activeFilter={activeFilter}
-            />
-          )
-        }
+        {filters.map(filter => (
+          <Filter
+            filter={filter}
+            key={filter}
+            handleChange={handleChange(filter)}
+            activeFilter={activeFilter}
+          />
+        )
         )}
       </div>
     </div>

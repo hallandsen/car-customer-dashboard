@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Filter = ({ filter, handleChange, activeFilter }) => {
-  const { name } = filter
-  const active = name === activeFilter?.name
-
-  return (
-    <div className='filters__item' key={name}>
-      <label htmlFor={name}>{name}</label>
-      <input type='checkbox' id={name} onChange={handleChange} checked={active} />
-    </div>
-  )
-}
+const Filter = ({ filter, handleChange, activeFilter }) => (
+  <div className='filters__item'>
+    <label htmlFor={filter}>{filter}</label>
+    <input
+      type='checkbox'
+      id={filter}
+      onChange={handleChange}
+      checked={filter === activeFilter}
+    />
+  </div>
+)
 
 export default Filter

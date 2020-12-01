@@ -7,12 +7,12 @@
       "orderDate": "2020-09-26T14:41:28.842Z",
       "make": "Tesla",
       "model": "Y",
-        "color": "Red",
-        "extras": [
-          "Extra Large battery"
-        ],
-        "recommendedPrice": 430000
-      }
+      "color": "Red",
+      "extras": [
+        "Extra Large battery"
+      ],
+      "recommendedPrice": 430000
+    }
     ],
     "salesPerson": {
       "name": "Eric Garner",
@@ -20,7 +20,7 @@
       "address": "godthåbsvej 142, 2000, Frederiksberg",
       "created": "2017-07-10T14:41:28.842Z"
     },
-    "customer": {
+    "customerDetails": {
       "name": "Jens",
       "surname": "Hansen",
       "age": "41",
@@ -56,7 +56,7 @@
       "address": "Tagensvej 102, 2200, Frederiksberg",
       "created": "2011-1-20T14:41:28.842Z"
     },
-    "customer": {
+    "customerDetails": {
       "name": "Brian",
       "surname": "Lys",
       "age": "32",
@@ -85,7 +85,7 @@
       "address": "Tagensvej 102, 2200, Frederiksberg",
       "created": "2011-1-20T14:41:28.842Z"
     },
-    "customer": {
+    "customerDetails": {
       "name": "Lars",
       "surname": "Thomsen",
       "age": "25",
@@ -112,7 +112,7 @@
       "address": "Tagensvej 102, 2200, Frederiksberg",
       "created": "2011-1-20T14:41:28.842Z"
     },
-    "customer": {
+    "customerDetails": {
       "name": "Jacob",
       "surname": "Svendsen",
       "age": "39",
@@ -139,7 +139,7 @@
       "address": "Jagtvej 230, 2100, København Ø",
       "created": "2019-11-20T14:41:28.842Z"
     },
-    "customer": {
+    "customerDetails": {
       "name": "Anders",
       "surname": "Christoffersen",
       "age": "42",
