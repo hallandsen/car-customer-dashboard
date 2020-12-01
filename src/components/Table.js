@@ -3,14 +3,15 @@ import React from 'react'
 import '../styles/DataTable.scss'
 
 const Table = ({ rows, labels, RowComponent }) => {
-  console.log('rows', rows)
+  const renderLabels = Object.keys(labels).map(key => (
+    <div key={key}>{labels[key]}</div>
+  ))
+
   return (
     <div className='DataTable'>
 
       <div className='DataTable__row-header'>
-        {Object.keys(labels).map(key => (
-          <div key={key}>{labels[key]}</div>
-        ))}
+        {renderLabels}
       </div>
 
       <div className='DataTable__rows'>

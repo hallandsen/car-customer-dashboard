@@ -5,7 +5,7 @@ import { selectSearch, selectCustomers, selectActiveFilter, selectFilters, setAc
 import Table from './Table'
 import Search from './Search'
 import Filters from './Filters'
-import CustomerRow from './CustomerRow'
+import CustomerRowLink from './CustomerRowLink'
 
 import { customerLabels } from '../utilities/tableLabels'
 
@@ -43,7 +43,7 @@ const CustomerTable = () => {
       <Table
         rows={customerDetails}
         labels={customerLabels}
-        RowComponent={CustomerRow('link')}
+        RowComponent={CustomerRowLink}
       />
     </div>
   )

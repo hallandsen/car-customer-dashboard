@@ -15,7 +15,7 @@ export const customerLabels = {
 
 export const purchaseLabels = {
   "price": 'Price',
-  "orderDate": "Order date",
+  "created": "Order date",
   "make": "Maker",
   "model": "Model",
   "color": "Color",

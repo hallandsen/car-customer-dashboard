@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { formatDate } from '../utilities/dateTime'
 
-const CustomerRow = link => ({ row }) => (
+const CustomerRow = ({ row }) => (
   <Link
     to={`/customer/${row.created}`}
     className='DataTable__row'
