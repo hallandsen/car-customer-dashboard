@@ -12,11 +12,11 @@ function App() {
       <h1>🏎️ 🚙 🚗</h1>
       <Router>
         <Switch>
+          <Route path='/customer/:id'>
+            <CustomerPage />
+          </Route>
           <Route path='/'>
             <CustomerTable />
-          </Route>
-          <Route path='/customer:id'>
-            <CustomerPage />
           </Route>
         </Switch>
       </Router>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import rows from '../../data/scheme-sketch.json'
+import customers from '../../data/scheme-sketch.json'
 import { filterOptions } from '../../utilities/filterOptions'
 
 export const customersSlice = createSlice({
@@ -8,7 +8,7 @@ export const customersSlice = createSlice({
     search: '',
     filters: Object.keys(filterOptions).map(key => filterOptions[key]),
     activeFilter: null,
-    rows: rows
+    customers: customers
   },
   reducers: {
     setSearch: (state, action) => {
@@ -28,40 +28,44 @@ export const selectSearch = state => state.search
 export const selectFilters = state => state.filters
 export const selectActiveFilter = state => state.activeFilter
 
-const selectRowsByName = state => state.rows.filter(row => {
-  const fullName = `${row.customerDetails.name} ${row.customerDetails.surname}`
+export const selectCustomer = id => state => state.customers.find(customer => {
+  return customer.customerDetails.created === id
+})
+
+const selectCustomersByName = state => state.customers.filter(customer => {
+  const fullName = `${customer.customerDetails.name} ${customer.customerDetails.surname}`
   return fullName.toLowerCase().includes(state.search.toLowerCase())
 })
 
-const selectRowsByStreet = state => state.rows.filter(row =>
-  row.customerDetails.address.toLowerCase().includes(state.search.toLowerCase())
+const selectCustomersByStreet = state => state.customers.filter(customer =>
+  customer.customerDetails.address.toLowerCase().includes(state.search.toLowerCase())
 )
 
-const selectRowsBySalesPerson = state => state.rows.filter(row =>
-  row.salesPerson.name.toLowerCase().includes(state.search.toLowerCase())
+const selectCustomersBySalesPerson = state => state.customers.filter(customer =>
+  customer.salesPerson.name.toLowerCase().includes(state.search.toLowerCase())
 )
 
-const selectRowsByCarMake = state => state.rows.filter(row =>
-  row.purchases.some((purchase) => purchase.make.toLowerCase().includes(state.search.toLowerCase()))
+const selectCustomersByCarMake = state => state.customers.filter(customer =>
+  customer.purchases.some((purchase) => purchase.make.toLowerCase().includes(state.search.toLowerCase()))
 )
 
-const selectRowsByCarModel = state => state.rows.filter(row =>
-  row.purchases.some((purchase) => purchase.model.toLowerCase().includes(state.search.toLowerCase()))
+const selectCustomersByCarModel = state => state.customers.filter(customer =>
+  customer.purchases.some((purchase) => purchase.model.toLowerCase().includes(state.search.toLowerCase()))
 )
 
-export const selectRows = state => {
+export const selectCustomers = state => {
   switch (state.activeFilter) {
     case filterOptions.customerName:
-      return selectRowsByName(state)
+      return selectCustomersByName(state)
     case filterOptions.customerStreet:
-      return selectRowsByStreet(state)
+      return selectCustomersByStreet(state)
     case filterOptions.salesPersonName:
-      return selectRowsBySalesPerson(state)
+      return selectCustomersBySalesPerson(state)
     case filterOptions.carMake:
-      return selectRowsByCarMake(state)
+      return selectCustomersByCarMake(state)
     case filterOptions.carModel:
-      return selectRowsByCarModel(state)
+      return selectCustomersByCarModel(state)
     default:
-      return state.rows
+      return state.customers
   }
 }

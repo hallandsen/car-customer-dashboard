@@ -1,16 +1,20 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { selectSearch, selectRows, selectActiveFilter, selectFilters, setActiveFilter, setSearch } from '../store/reducers/customersSlice'
+import { selectSearch, selectCustomers, selectActiveFilter, selectFilters, setActiveFilter, setSearch } from '../store/reducers/customersSlice'
 import Table from './Table'
 import Search from './Search'
 import Filters from './Filters'
+import CustomerRow from './CustomerRow'
+
+import { customerLabels } from '../utilities/tableLabels'
 
 const CustomerTable = () => {
-  const rows = useSelector(selectRows)
+  const customers = useSelector(selectCustomers)
   const activeFilter = useSelector(selectActiveFilter)
   const filters = useSelector(selectFilters)
   const search = useSelector(selectSearch)
+
   const dispatch = useDispatch()
 
   const handleSelectFilter = (filter) => () => {
@@ -21,6 +25,8 @@ const CustomerTable = () => {
     const text = event.target.value
     dispatch(setSearch(text))
   }
+
+  const customerDetails = customers.map(customer => customer.customerDetails)
 
   return (
     <div>
@@ -34,7 +40,11 @@ const CustomerTable = () => {
         activeFilter={activeFilter}
         onSelect={handleSelectFilter}
       />
-      <Table rows={rows} />
+      <Table
+        rows={customerDetails}
+        labels={customerLabels}
+        RowComponent={CustomerRow}
+      />
     </div>
   )
 }
