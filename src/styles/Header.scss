@@ -1,0 +1,35 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d1d1d1;
+
+  &__container {
+    position: relative;
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & h2 {
+    margin: 0;
+  }
+
+  &__link {
+    position: absolute;
+    left: 20px;
+
+    & svg {
+      height: 15px;
+      width: auto;
+    }
+  }
+}
